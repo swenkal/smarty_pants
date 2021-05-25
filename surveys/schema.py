@@ -1,4 +1,5 @@
 from marshmallow import Schema, fields
+from marshmallow.validate import Regexp
 
 class SurveySchema(Schema):
     uniqueID = fields.Int(required=True)
@@ -8,6 +9,15 @@ class SurveySchema(Schema):
     q2 = fields.Str(required=True)
     q3 = fields.Str(required=True)
     q4 = fields.Str(required=True)
-    #visitID = fields.Int(required=True)
-    #host = fields.Str(required=True)
-    #hitDate = fields.Str(required=True, validate=Regexp(zulu_regexp))
+
+#regexp for builtIn methods like __magic__
+type_regexp = r"^(?:(?!__.*__).)*$"
+
+date_regexp = r"^20\d{2}-[0-1]\d-[0-3]\d$"
+
+class GetSchema(Schema):
+    type = fields.Str(required=True, validate=Regexp(type_regexp))
+    start = fields.Str(required=True, validate=Regexp(date_regexp))
+    end = fields.Str(required=True, validate=Regexp(date_regexp))
+    surveyID = fields.Int()
+    pathName = fields.Str()
