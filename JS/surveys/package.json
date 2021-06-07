@@ -1,0 +1,25 @@
+{
+  "name": "surveys",
+  "version": "1.0.0",
+  "description": "Page, disc, and common surveys for ams (or other educational recource)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "surveys",
+    "ams"
+  ],
+  "author": "swenkal",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "grunt": "^1.4.1",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^3.0.0",
+    "grunt-contrib-uglify": "^5.0.1"
+  }
+}
