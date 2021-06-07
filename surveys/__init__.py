@@ -171,5 +171,5 @@ class Surveys(Resource):
         file.close()
 
         response = make_response({'message': 'ok'}, 200)
-        response.set_access_headers(response)
+        self.set_access_headers(response)
         return response
